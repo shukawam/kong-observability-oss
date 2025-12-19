@@ -9,13 +9,9 @@ flowchart LR
 
     subgraph Kong Gateway
         A1[OpenTelemetry plugin]
-        A2[Prometheus plugin]
-        A3[HTTP Log plugin]
     end
 
-    A1 --> |OTLP Receiver - Log/Trace| B1[OpenTelemetry Collector]
-    A2 --> |Prometheus Receiver| B1
-    A3 --> |HTTP Log Input| B3[Fluent Bit] --> |OTLP Receiver| B1
+    A1 --> |OTLP Receiver| B1[OpenTelemetry Collector]
 
     B1 --> |OTLP Exporter| C1[Grafana Tempo]
     B1 --> |Prometheus Exporter| C2[Prometheus]
