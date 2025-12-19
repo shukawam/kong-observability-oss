@@ -1,0 +1,2 @@
+config/kong/certs/tls.crt
+config/kong/certs/tls.key
