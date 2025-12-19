@@ -35,5 +35,5 @@ After that, you can access as follows.
 | service      | endpoint                                                         |
 | ------------ | ---------------------------------------------------------------- |
 | Kong Manager | [http://localhost:8002](http://localhost:8002)                   |
-| API          | [http://localhost:8000/v1/greet](http://localhost:8000/v1/greet) |
+| API          | [http://localhost:8000/mock/uuid](http://localhost:8000/mock/uuid) |
 | Grafana      | [http://localhost:3000](http://localhost:3000)                   |
