@@ -1,0 +1,25 @@
+_format_version: "3.0"
+
+services:
+  - name: httpbin-service
+    url: http://httpbin
+    routes:
+      - name: httpbin-route
+        paths:
+          - /mock
+        strip_path: true
+
+plugins:
+  - name: opentelemetry
+    config:
+      traces_endpoint: http://otel-collector:4318/v1/traces
+      logs_endpoint: http://otel-collector:4318/v1/logs
+      access_logs_endpoint: http://otel-collector:4318/v1/logs
+      metrics:
+        enable_bandwidth_metrics: true
+        enable_consumer_attribute: true
+        enable_latency_metrics: true
+        enable_request_metrics: true
+        enable_upstream_health_metrics: true
+        endpoint: http://otel-collector:4318/v1/metrics
+        push_interval: 60
